@@ -135,3 +135,4 @@ C:\Kurs\SchoolWebApp\SchoolWebApp\bin\Debug\net8.0\runtimes\win\lib\net6.0\Syste
 C:\Kurs\SchoolWebApp\SchoolWebApp\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Kurs\SchoolWebApp\SchoolWebApp\obj\Debug\net8.0\SchoolWebApp.csproj.AssemblyReference.cache
 C:\Kurs\SchoolWebApp\SchoolWebApp\obj\Debug\net8.0\SchoolWebApp.csproj.CopyComplete
+C:\Kurs\SchoolWebApp\SchoolWebApp\obj\Debug\net8.0\SchoolWebApp.sourcelink.json
