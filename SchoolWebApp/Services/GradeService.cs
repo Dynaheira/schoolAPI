@@ -71,5 +71,11 @@ namespace SchoolWebApp.Services {
             _dbContext.Grades.Update(updateGrade);
             await _dbContext.SaveChangesAsync();
         }
+
+        internal async Task DeleteAsync(int id) {
+            var gradeToDelete = await _dbContext.Grades.FirstOrDefaultAsync(g => g.Id == id);
+            _dbContext.Grades.Remove(gradeToDelete);
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

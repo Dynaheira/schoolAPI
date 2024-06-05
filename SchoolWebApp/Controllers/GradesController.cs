@@ -49,5 +49,13 @@ namespace SchoolWebApp.Controllers {
             await _gradeService.UpdateAsync(id, gradeDTO);
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+
+        public async Task<IActionResult>
+            DeleteAsync(int id) {
+            await _gradeService.DeleteAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }
