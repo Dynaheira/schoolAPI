@@ -1,16 +1,27 @@
-﻿@using SchoolWebApp.DTO
-@model IEnumerable<StudentDTO>
-<h1>List of students</h1>
-<a class="btn btn-primary my-2" asp-action="Create">Create</a>
+﻿@using SchoolWebApp.DTO;
+@using SchoolWebApp.ViewModels
 
-@foreach (var student in Model) {
-    <div class="border border-dark my-2 p-4">
-        <h5>@student.FirstName @student.LastName</h5>
-        <p>Student Id: @student.Id</p>
-        <p>Date of birth: @student.DateOfBirth.ToShortDateString()</p>
-        <a class="btn btn-warning m-1" asp-action="Update" asp-route-id="@student.Id">Edit</a>
-        <form method="post">
-            <button type="submit" class="btn btn-danger m-1" asp-route-id="@student.Id">Delete</button>
-        </form>
-    </div>
-}
+@model IEnumerable<GradesViewModel>
+<h1>List of all grades</h1>
+
+<div>
+    <a class="btn btn-success" asp-controller="Grades" asp-action="Create">
+        Add a
+        new grade
+    </a>
+    <hr />
+    @foreach (var item in Model) {
+        <div class="border border-1 border-dark p-2">
+            <p>@item.StudentName </p>
+            <p>
+                @item.SubjectName @item.Topic - @item.Mark <br>
+                @item.Date.ToShortDateString()
+            </p>
+            <a class="btn btn-warning" asp-controller="Grades" asp-action="Update"
+               asp-route-id="@item.Id">Edit</a>
+            <a class="btn btn-danger" asp-controller="Grades" asp-action="Delete"
+               asp-route-id="@item.Id">Delete</a>
+        </div>
+    }
+
+</div>

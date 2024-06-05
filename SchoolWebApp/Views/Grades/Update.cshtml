@@ -1,15 +1,27 @@
 ﻿@using SchoolWebApp.DTO
-@model StudentDTO
-<form asp-action="Update">
-    <div class ="form-group">
-        <label asp-for="FirstName"></label>
-        <input type="text" asp-for="FirstName" class="form-control"/>
+@model GradeDTO;
+<div>
+    <form asp-action="Update" method="post">
+        <h4>Edit a grade</h4>
+        <div class="form-group">
+            <label class="control-label" asp-for="StudentId"></label>
+            <select class="form-control" asp-for="StudentId" asp-items="ViewBag.Students"></select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" asp-for="SubjectId"></label>
+            <select class="form-control" asp-for="SubjectId" asp-items="ViewBag.Subjects"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Topic"></label>
+            <input type="text" asp-for="Topic" placeholder="What was examined" class="form-control" />
 
-        <label asp-for="LastName"></label>
-        <input type="text" asp-for="LastName" class="form-control" />
-
-        <label asp-for="DateOfBirth"></label>
-        <input type="date" min="1900" max="3000" asp-for="DateOfBirth" class="form-control" />
-    </div>
-    <input type="submit" class="btn btn-success" value="Update"/>
-</form>
+        </div>
+        <div class="form-group">
+            <label asp-for="Mark"></label>
+            <input type="number" asp-for="Mark" min="1" max="5" placeholder="Mark" class="form-control" />
+        </div>
+        <div>
+            <input class="btn btn-success" type="submit" value="Update" />
+        </div>
+    </form>
+</div>
