@@ -11,6 +11,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => {
 });
 builder.Services.AddScoped<StudentService>();
 builder.Services.AddScoped<SubjectService>();
+builder.Services.AddScoped<GradeService>();
 
 
 
